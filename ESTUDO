@@ -1,0 +1,46 @@
+Objetivo
+Este projeto foi desenvolvido com o objetivo de compreender conceitos básicos de blockchain e smart contracts
+utilizando a linguagem Solidity no ambiente Remix IDE (https://remix.ethereum.org/?nomobileredirect).
+
+* Conceitos *
+O que é blockchain?
+  Blockchain é como um banco de dados distribuído que não fica em um único servidor. Várias máquinas têm cópias dis dados,
+e os registros ficam encadeados em blocos.
+Ponto chave: Os dados ficam difíceis de serem alterados depois de registrados, trazendo mais confiança sme precisar de
+uma autoridade central.
+
+O que é um Smart Contract?
+  É basicamente um programa que roda dentro da blockchain. Ele funciona parecido com um backend, mas com a diferença de 
+que:
+- roda de forma descentralizada (?)
+- depois do deploy* não pode ser alterado facilmente
+  Na blockchain, o código fica gravado nos blocos, e os blocos são imutáveis. Se algo precisa mudar, normalmente é
+feito o deploy de um novo contrato. No remix parece que pode mudar, mas é porque é uma blockchain de teste.
+- exceuta automaticamente quando alguém chama suas funções
+
+*deploy nesse caso = publicar o contrato dentro da blockchain 
+
+Nesse projeto simples, o contrato controla quantos dias cada usuário registrou estudo.
+
+O que é Solidity?
+  É uma linguagem usada para escrever "smart contracts" principalmente na blockchain da Ethereum.
+
+Achei a sintaxe parecida com JavaScript, mas com coisas específicas de blockchain, como:
+- msg.sender para identificar quem chamou
+- funções view
+- tipos como address
+
+* O que eu entendi sobre o Remix *
+  O Remix é uma IDE online que permite escrever, compilar e testar smart contracts direto no navegador.
+ffoi útil porque não precisei instalar nada e consegui:
+- compilar o contrato
+- fazer deploy em uma blockchain de teste
+- chamar as funções e ver o resultado
+
+* Sobre o programa *
+O contrato possui um mapping (estrutura de dados parecida com dicionário) para guardar cada endereço de usuário 
+(address) e a quantidade de dias de estudo registrados (uint). Já a função verMeusDias() apenas consulta e retorna
+quantos check-ins foram feitos. 
+Durante os testes no Remix, fiz o deploy do contrato em uma rede de teste e interagi com ele pelos botões gerados 
+automaticamente. Também testei trocar de conta para confirmar que cada endereço mantém seu próprio registro, o 
+que mostrou na prática como os dados ficam associados a usuário na blockchain.
